@@ -1,47 +1,36 @@
-const advices = [];
+const options = ['walcz', '"weź, nie pytaj"', 'poddaj się'];
+
 const input = document.querySelector('input');
-const addBtn = document.querySelector('.add');
-const resetBtn = document.querySelector('.clean');
-const div = document.querySelector('div');
-const $showAdvice = document.querySelector('.showAdvice');
-const $showOptions = document.querySelector('.showOptions');
+const add = document.querySelector('.add');
+const clean = document.querySelector('.clean');
+const showAdviceBtn = document.querySelector('.showAdvice');
+const showOptionsBtn = document.querySelector('.showOptions');
+const h1 = document.querySelector('h1');
 
-const addAdvice = (e) => {
-    const advice = input.value;
+const addOption = (e) => {
     e.preventDefault();
-
-    function uwaga() {
-        if (input.value.length) {
-            advices.push(advice);
-            console.log(advices);
-            // div.textContent += advice + ', ';
-            input.value = '';
-        } else {
-            alert('nie wpisuj pustej wartości');
-        }
-    }
-    uwaga();
-}
-showOptions();
-resetAdvice();
-showAdvice();
-
-function showOptions() {
-    div.textContent += advices + ', ';
+    options.push(input.value);
+    input.value = '';
 }
 
-function resetAdvice() {
-    // advices.splice();
-    advices.length = 0;
+const showAdvice = () => {
+    // Math.random() * options.length;
+    // console.log(Math.floor(Math.random() * options.length));
+    const index = Math.floor(Math.random() * options.length);
+    h1.textContent = options[index];
 }
 
-function showAdvice() {
-    for (let i = 0; i < advices.length; i++) {
-        div.textContent = Math.random(advices[i] - 1);
-    }
+const showOptions = () => {
+    console.log(options);
+    alert(options.join(', '));
 }
 
-addBtn.addEventListener('click', addAdvice);
-$showOptions.addEventListener('click', showOptions);
-resetBtn.addEventListener('click', resetAdvice);
-$showAdvice.addEventListener('click', showAdvice);
+const resetOptions = (e) => {
+    e.preventDefault();
+    options.length = 0;
+}
+
+add.addEventListener('click', addOption);
+clean.addEventListener('click', resetOptions);
+showOptionsBtn.addEventListener('click', showOptions);
+showAdviceBtn.addEventListener('click', showAdvice);
