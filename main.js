@@ -24,16 +24,24 @@ const addAdvice = (e) => {
 }
 showOptions();
 resetAdvice();
+showAdvice();
 
 function showOptions() {
     div.textContent += advices + ', ';
 }
 
 function resetAdvice() {
-    advices.splice();
+    // advices.splice();
+    advices.length = 0;
+}
+
+function showAdvice() {
+    for (let i = 0; i < advices.length; i++) {
+        div.textContent = Math.random(advices[i] - 1);
+    }
 }
 
 addBtn.addEventListener('click', addAdvice);
 $showOptions.addEventListener('click', showOptions);
 resetBtn.addEventListener('click', resetAdvice);
-// $showAdvice.addEventListener('click', showAdvice);
+$showAdvice.addEventListener('click', showAdvice);
