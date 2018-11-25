@@ -1,1 +1,2 @@
-# Dynamiczne dodanie elementów do tablicy
+# Losowa rada od komputera
+## Podaj swoje propozycje możliwości
