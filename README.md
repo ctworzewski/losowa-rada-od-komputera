@@ -1,0 +1,1 @@
+# Dynamiczne dodanie elementów do tablicy
