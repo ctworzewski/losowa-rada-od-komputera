@@ -23,12 +23,17 @@ const addAdvice = (e) => {
     uwaga();
 }
 showOptions();
+resetAdvice();
 
 function showOptions() {
     div.textContent += advices + ', ';
 }
 
+function resetAdvice() {
+    advices.splice();
+}
+
 addBtn.addEventListener('click', addAdvice);
 $showOptions.addEventListener('click', showOptions);
-// resetBtn.addEventListener('click', resetAdvice);
+resetBtn.addEventListener('click', resetAdvice);
 // $showAdvice.addEventListener('click', showAdvice);
