@@ -1,0 +1,41 @@
+section {
+    width: 600px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #565d68;
+}
+
+form {
+    background-color: #88909b;
+    padding: 5px;
+
+}
+
+label {
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px;
+}
+
+button {
+    padding: 5px;
+    letter-spacing: 2px;
+    width: 100px;
+    /* text-align: center; */
+}
+
+h1 {
+    text-align: center;
+}
+
+.add,
+.clean {
+    margin-left: 15px;
+}
+
+.showAdvice,
+.showOptions {
+    text-align: center;
+    margin-left: 20%;
+}
